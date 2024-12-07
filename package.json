@@ -3,6 +3,6 @@
     "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
   "devDependencies": {
-    "tailwindcss": "3.4.14"
+    "tailwindcss": "^3.4.14"
   }
 }
