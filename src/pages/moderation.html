@@ -17,8 +17,7 @@
         <img class="rounded-full w-8 mr-2 my-2" src=".././assets/images/bg-login3.jpg" alt="">
     </header>
     <div class="bg-gray-200 flex">
-        
-        <aside class="h-screen bg-white min-w-96 p-6 lg:flex flex-col justify-between hidden ">
+        <aside class="h-screen bg-white min-w-96 p-6 lg:flex flex-col justify-between hidden sticky top-0">
             <header class="w-full">
                 <div class=" flex items-start gap-4 pl-4">
                     <svg data-theme="light" viewBox="0 0 3000 3000" focusable="false" class="chakra-icon css-5ncis9 w-8">
@@ -54,112 +53,189 @@
             </footer>
             
         </aside>
-        <main class="w-full min-h-screen lg:w-5/6 flex flex-col justify-between">
-            <main class="flex flex-col w-4/5 my-8 mx-auto">
+        <main class="w-full min-h-screen flex flex-col justify-between">
+            <main class="flex flex-col w-4/5  my-8 mx-auto">
                 <h2 class="text-4xl font-bold">Chat Moderation</h2>
                 <p class="text-2xl  text-gray-500">Manage chat restrictions and spam filters</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 mt-8">
                     <div class="flex flex-col justify-between p-4 bg-white rounded-lg shadow h-48">
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Blacklist Words/Phrases</h3>
-                            <p class="text-sm text-gray-500">This filter allows you to timeout custom words, phrases, and patterns.</p>
+                        <div class="h-full border-b border-gray-300 flex gap-4 items-start">
+                            <i class="fa-solid fa-ban fa-lg mt-2 px-2 py-4 rounded-lg bg-gray-100"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Blacklist Words/Phrases</h3>
+                                <p class="text-sm text-gray-500">This filter allows you to timeout custom words, phrases, and patterns.</p>
+                            </div>
                         </div>
                         <div class="mt-4 flex items-center">
-                            <button class="px-4 py-2 text-sm font-medium text-gray-800 bg-gray-200 rounded">Disabled</button>
+                            <!-- Este toggle se saca de uiverse, en concreto uno de los componentes hecho con toggle, lo saco de esta url, pero lo he editado para que tenga la forma que necesito https://uiverse.io/Shubh0408/chilly-cobra-48 -->
+                            <!-- Toggle -->
+                            <label class="relative inline-flex h-8 w-14 cursor-pointer flex items-center">
+                                <input type="checkbox" checked class="peer sr-only" />
+                                <span class="absolute h-full w-full rounded-full bg-gray-300 transition peer-checked:bg-blue-700"></span>
+                                <span class="absolute top-1 left-1 h-6 w-6 rounded-full bg-white transition-transform peer-checked:translate-x-6"></span>
+                                <!-- texto alternativo -->
+                                <span class="block peer-checked:hidden absolute left-16 text-gray-500 font-semibold">Disabled</span>
+                                <span class="peer-checked:block hidden absolute left-16 text-gray-500 font-semibold">Enabled</span>
+                            </label>
                             <div class="flex ml-auto space-x-2">
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-list"></i></button>
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-cog"></i></button>
+                                <button class="p-2 border-gray-200 shadow  rounded"><i class="fa-solid fa-book"></i></button>
+                                <button class="p-2 border-gray-200 shadow  rounded"><i class="fas fa-cog"></i></button>
                             </div>
                         </div>
                     </div>
                 
                     <div class="flex flex-col justify-between p-4 bg-white rounded-lg shadow h-48">
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Excess Caps</h3>
-                            <p class="text-sm text-gray-500">This filter allows you to timeout users who use excessive capital letters in messages.</p>
+                        <div class="h-full border-b border-gray-300 flex gap-4 items-start">
+                            <i class="fa-solid fa-a fa-lg mt-2 px-2 py-4 rounded-lg bg-gray-100"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Excess Caps</h3>
+                                <p class="text-sm text-gray-500">This filter allows you to timeout users who use excessive capital letters in messages.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center">
+                            <!-- Toggle -->
+                            <label class="relative inline-flex h-8 w-14 cursor-pointer flex items-center">
+                                <input type="checkbox" checked class="peer sr-only" />
+                                <span class="absolute h-full w-full rounded-full bg-gray-300 transition peer-checked:bg-blue-700"></span>
+                                <span class="absolute top-1 left-1 h-6 w-6 rounded-full bg-white transition-transform peer-checked:translate-x-6"></span>
+                                <!-- texto alternativo -->
+                                <span class="block peer-checked:hidden absolute left-16 text-gray-500 font-semibold">Disabled</span>
+                                <span class="peer-checked:block hidden absolute left-16 text-gray-500 font-semibold">Enabled</span>
+                            </label>
+                          <div class="flex ml-auto space-x-2">
+                            <button class="p-2 border-gray-200 shadow  rounded"><i class="fa-solid fa-book"></i></button>
+                            <button class="p-2 border-gray-200 shadow  rounded"><i class="fas fa-cog"></i></button>
+                          </div>
+                        </div>
+                      </div>
+                      
+                
+                    <div class="flex flex-col justify-between p-4 bg-white rounded-lg shadow h-48">
+                        <div class="h-full border-b border-gray-300 flex gap-4 items-start">
+                            <i class="fa-solid fa-icons fa-lg mt-2 px-2 py-4 rounded-lg bg-gray-100"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Excess Emotes</h3>
+                                <p class="text-sm text-gray-500">This filter allows you to timeout users abusing emotes.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center">
+                            <!-- Toggle -->
+                            <label class="relative inline-flex h-8 w-14 cursor-pointer flex items-center">
+                                <input type="checkbox" checked class="peer sr-only" />
+                                <span class="absolute h-full w-full rounded-full bg-gray-300 transition peer-checked:bg-blue-700"></span>
+                                <span class="absolute top-1 left-1 h-6 w-6 rounded-full bg-white transition-transform peer-checked:translate-x-6"></span>
+                                <!-- texto alternativo -->
+                                <span class="block peer-checked:hidden absolute left-16 text-gray-500 font-semibold">Disabled</span>
+                                <span class="peer-checked:block hidden absolute left-16 text-gray-500 font-semibold">Enabled</span>
+                            </label>
+                            <div class="flex ml-auto space-x-2">
+                                <button class="p-2 border-gray-200 shadow  rounded"><i class="fa-solid fa-book"></i></button>
+                                <button class="p-2 border-gray-200 shadow  rounded"><i class="fas fa-cog"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="flex flex-col justify-between p-4 bg-white rounded-lg shadow h-48">
+                        <div class="h-full border-b border-gray-300 flex gap-4 items-start">
+                            <i class="fa-solid fa-link-slash fa-lg mt-2 px-2 py-4 rounded-lg bg-gray-100"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Links</h3>
+                                <p class="text-sm text-gray-500">This filter allows you to timeout and whitelist links.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center">
+                            <!-- Toggle -->
+                            <label class="relative inline-flex h-8 w-14 cursor-pointer flex items-center">
+                                <input type="checkbox" checked class="peer sr-only" />
+                                <span class="absolute h-full w-full rounded-full bg-gray-300 transition peer-checked:bg-blue-700"></span>
+                                <span class="absolute top-1 left-1 h-6 w-6 rounded-full bg-white transition-transform peer-checked:translate-x-6"></span>
+                                <!-- texto alternativo -->
+                                    <span class="block peer-checked:hidden absolute left-16 text-gray-500 font-semibold">Disabled</span>
+                                    <span class="peer-checked:block hidden absolute left-16 text-gray-500 font-semibold">Enabled</span>
+                            </label>
+                            <div class="flex ml-auto space-x-2">
+                                <button class="p-2 border-gray-200 shadow  rounded"><i class="fa-solid fa-book"></i></button>
+                                <button class="p-2 border-gray-200 shadow  rounded"><i class="fas fa-cog"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="flex flex-col justify-between p-4 bg-white rounded-lg shadow h-48">
+                        <div class="h-full border-b border-gray-300 flex gap-4 items-start">
+                            <i class="fa-solid fa-asterisk fa-lg mt-2 px-2 py-4 rounded-lg bg-gray-100"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Excess Symbols</h3>
+                                <p class="text-sm text-gray-500">This filter allows you to timeout users spamming excessive symbols.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center">
+                            <!-- Toggle -->
+                            <label class="relative inline-flex h-8 w-14 cursor-pointer flex items-center">
+                                <input type="checkbox" checked class="peer sr-only" />
+                                <span class="absolute h-full w-full rounded-full bg-gray-300 transition peer-checked:bg-blue-700"></span>
+                                <span class="absolute top-1 left-1 h-6 w-6 rounded-full bg-white transition-transform peer-checked:translate-x-6"></span>
+                                <!-- texto alternativo -->
+                                <span class="block peer-checked:hidden absolute left-16 text-gray-500 font-semibold">Disabled</span>
+                                <span class="peer-checked:block hidden absolute left-16 text-gray-500 font-semibold">Enabled</span>
+                            </label>
+                            <div class="flex ml-auto space-x-2">
+                                <button class="p-2 border-gray-200 shadow  rounded"><i class="fa-solid fa-book"></i></button>
+                                <button class="p-2 border-gray-200 shadow  rounded"><i class="fas fa-cog"></i></button>
+                            </div>
+                        </div>
+                    </div>
 
-                        </div>
-                        <div class="mt-4 flex items-center">
-                            <button class="px-4 py-2 text-sm font-medium text-gray-800 bg-gray-200 rounded">Disabled</button>
-                            <div class="flex ml-auto space-x-2">
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-list"></i></button>
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-cog"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="flex flex-col justify-between p-4 bg-white rounded-lg shadow h-48">
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Excess Emotes</h3>
-                            <p class="text-sm text-gray-500">This filter allows you to timeout users abusing emotes.</p>
-                        </div>
-                        <div class="mt-4 flex items-center">
-                            <button class="px-4 py-2 text-sm font-medium text-gray-800 bg-gray-200 rounded">Disabled</button>
-                            <div class="flex ml-auto space-x-2">
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-list"></i></button>
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-cog"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="flex flex-col justify-between p-4 bg-white rounded-lg shadow h-48">
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Links</h3>
-                            <p class="text-sm text-gray-500">This filter allows you to timeout and whitelist links.</p>
-                        </div>
-                        <div class="mt-4 flex items-center">
-                            <button class="px-4 py-2 text-sm font-medium text-gray-800 bg-gray-200 rounded">Disabled</button>
-                            <div class="flex ml-auto space-x-2">
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-list"></i></button>
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-cog"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="flex flex-col justify-between p-4 bg-white rounded-lg shadow h-48">
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Excess Symbols</h3>
-                            <p class="text-sm text-gray-500">This filter allows you to timeout users spamming excessive symbols.</p>
-                        </div>
-                        <div class="mt-4 flex items-center">
-                            <button class="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded">Enabled</button>
-                            <div class="flex ml-auto space-x-2">
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-list"></i></button>
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-cog"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
 
                     <div class="flex flex-col justify-between p-4 bg-white rounded-lg shadow h-48">
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Repetitions</h3>
-                            <p class="text-sm text-gray-500">This filter allows you to timeout users whom repeat words or phrases.</p>
+                        <div class="h-full border-b border-gray-300 flex gap-4 items-start">
+                            <i class="fa-solid fa-repeat fa-lg mt-2 px-2 py-4 rounded-lg bg-gray-100"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Repetitions</h3>
+                                <p class="text-sm text-gray-500">This filter allows you to timeout users whom repeat words or phrases.</p>
+                            </div>
                         </div>
                         <div class="mt-4 flex items-center">
-                            <button class="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded">Enabled</button>
+                            <!-- Toggle -->
+                            <label class="relative inline-flex h-8 w-14 cursor-pointer flex items-center">
+                                <input type="checkbox" checked class="peer sr-only" />
+                                <span class="absolute h-full w-full rounded-full bg-gray-300 transition peer-checked:bg-blue-700"></span>
+                                <span class="absolute top-1 left-1 h-6 w-6 rounded-full bg-white transition-transform peer-checked:translate-x-6"></span>
+                                <!-- texto alternativo -->
+                                <span class="block peer-checked:hidden absolute left-16 text-gray-500 font-semibold">Disabled</span>
+                                <span class="peer-checked:block hidden absolute left-16 text-gray-500 font-semibold">Enabled</span>
+                            </label>
                             <div class="flex ml-auto space-x-2">
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-list"></i></button>
-                                <button class="p-2 bg-gray-200 rounded"><i class="fas fa-cog"></i></button>
+                                <button class="p-2 border-gray-200 shadow  rounded"><i class="fa-solid fa-book"></i></button>
+                                <button class="p-2 border-gray-200 shadow rounded"><i class="fas fa-cog"></i></button>
                             </div>
                         </div>
                     </div>
                   
                     
                     <div class="flex flex-col justify-between p-4 bg-white rounded-lg shadow h-48">
-                        <div>
-                            <h3 class="font-semibold text-gray-800">Shared Chat</h3>
-                            <p class="text-sm text-gray-500">This setting will enable filtering of messages sent from other channels shared to your chat./p>
-
+                        <div class="h-full border-b border-gray-300 flex gap-4 items-start">
+                            <i class="fa-solid fa-filter fa-lg mt-2 px-2 py-4 rounded-lg bg-gray-100"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Shared Chat</h3>
+                                <p class="text-sm text-gray-500">This setting will enable filtering of messages sent from other channels shared to your chat.</p>
+                            </div>
                         </div>
                       <div class="mt-4 flex items-center">
-                        <button class="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded">Enabled</button>
+                        <!-- Toggle -->
+                        <label class="relative inline-flex h-8 w-14 cursor-pointer flex items-center">
+                            <input type="checkbox" checked class="peer sr-only" />
+                            <span class="absolute h-full w-full rounded-full bg-gray-300 transition peer-checked:bg-blue-700"></span>
+                            <span class="absolute top-1 left-1 h-6 w-6 rounded-full bg-white transition-transform peer-checked:translate-x-6"></span>
+                            <!-- texto alternativo -->
+                            <span class="block peer-checked:hidden absolute left-16 text-gray-500 font-semibold">Disabled</span>
+                            <span class="peer-checked:block hidden absolute left-16 text-gray-500 font-semibold">Enabled</span>
+                        </label>
                       </div>
                     </div>
                   </div>
                   
             </main>
-            <footer class="flex justify-around w-full border-t-[1px] border-gray-400 p-2">
+            <footer class="flex flex-col xl:flex-row items-center justify-around w-full border-t-[1px] border-gray-400 p-2">
                 <p class="text-gray-500">Copyright © 2024 NightDev, LLC. All Rights Reserved.</p>
                 <p class="text-gray-500">Terms of Service • Privacy Policy • API Documentation</p>
             </footer>
