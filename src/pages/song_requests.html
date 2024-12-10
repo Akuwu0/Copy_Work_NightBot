@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./../css/style.css">
 </head>
 <body>
+    <!-- header para resoluciones bajas -->
     <header class="flex lg:hidden justify-between items-center px-4 border-b border-gray-300 bg-gray-200 h-20">
         <i id="navBtn" class="fa-solid fa-bars rounded-lg bg-white shadow p-2"></i>
         <svg data-theme="light" viewBox="0 0 3000 3000" focusable="false" class="chakra-icon css-5ncis9 w-8">
@@ -18,7 +19,9 @@
         <img class="rounded-full w-8 mr-2 my-2" src=".././assets/images/bg-login3.jpg" alt="">
     </header>
     <div class="bg-gray-200 flex relative">
+        <!-- aside del menu -->
         <aside id="nav" class="h-screen bg-white min-w-96 p-6 lg:flex flex-col justify-between hidden sticky top-0">
+            <!-- header del aside -->
             <header class="w-full">
                 <div class=" flex items-start gap-4 pl-4">
                     <svg data-theme="light" viewBox="0 0 3000 3000" focusable="false" class="chakra-icon css-5ncis9 w-8">
@@ -38,6 +41,7 @@
                     <li class="my-2 flex items-center hover:bg-gray-200 rounded-xl py-2"><i class="fa-solid fa-puzzle-piece fa-lg p-2"></i><p class="text-xl ml-4"> Integrations</p></li>
                 </ul>
             </header>
+            <!-- footer del aside -->
             <footer class="w-full">
                 <ul>
                     <li class="my-2 flex items-center hover:bg-gray-200 rounded-xl py-2"><i class="fa-brands fa-discord fa-lg p-2"></i><p class="text-xl ml-4">Discord</p></li>
@@ -52,16 +56,21 @@
                     <i class="fa-solid fa-ellipsis-vertical text-end mr-4"></i>
                 </div>
             </footer>
-            
         </aside>
+        <!-- main -->
         <main id="main" class="w-full min-h-screen flex flex-col justify-between">
+            <!-- contenerdor principal de la playlist -->
             <main class="flex flex-col w-4/5 my-8 mx-auto">
+                <!-- titulo de la pagina -->
                 <h2 class="text-4xl font-bold hidden md:block">Song Requests</h2>
                 <p class="text-2xl text-gray-500 hidden md:block">Manage your song requests</p>
+                <!-- contenedor del cuadro de playlist  -->
                 <div class="flex flex-col md:flex-row w-full gap-8 items-center justify-between">
                     <div class="w-full md:w-96 aspect-square mt-6">
+                        <!-- iframe de souncloud -->
                         <iframe src="https://w.soundcloud.com/player/?url=https://soundcloud.com/monstercat/stonebank-eagle-eyes-feat-emel&amp;auto_play=false&amp;show_artwork=true&amp;buying=false&amp;liking=false&amp;sharing=false&amp;download=false&amp;show_playcount=false&amp;show_comments=false&amp;show_user=false&amp;visual=true&amp;hide_related=true&amp;callback=true" allow="autoplay" class="w-full h-full rounded-lg"></iframe>
                     </div>
+                    <!-- informacion de la cancion actual -->
                     <div class="w-full md:w-4/6 flex flex-col justify-center gap-2">
                         <div class="flex gap-4 items-center">
                           <span class="bg-gray-100 text-xs p-2 shadow rounded-lg text-gray-500">Up Next</span>
@@ -80,6 +89,7 @@
                       </div>
                 </div>
 
+                <!-- input y boton de la tabla de canciones -->
                 <div class="my-4 flex w-full justify-between">
                     <div class="flex items-center space-x-2">
                       <div class="w-64 py-2 px-4 rounded-md border border-gray-300 bg-white gap-4 items-center hidden md:flex">
@@ -88,7 +98,6 @@
                       </div>
                     </div>
                   
-                    <!-- Button Group -->
                     <div class="flex space-x-4">
                       <button type="button" class="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
                         Request Song
@@ -98,6 +107,7 @@
                       </button>
                     </div>
                 </div>
+                <!-- tabla de canciones -->
                 <table class="w-full border-collapse bg-white shadow rounded-xl">
                     <thead>
                         <tr><th class="w-4/6 text-start pl-8 p-2">UP NEXT</th><th class="w-2/6 text-start p-2 hidden sm:block"><p class="w-32">ADDED BY</p></th></tr>
@@ -405,22 +415,25 @@
                         </tr>
                     </tbody>
                 </table>
-                  
-                  
             </main>
+            <!-- menu de control de musiva -->
             <div class="w-4/5 mx-auto bg-white bg-gray-200 h-20 flex items-center justify-between px-8 sticky bottom-0">
+                <!-- barra de sonido -->
                 <div class="h-full flex items-center max-w-56 justify-center">
                     <i class="fa-solid fa-volume-up text-gray-500 px-4"></i>
                     <input type="range" min="0" max="100" value="50" class="w-20 md:w-44 h-2 bg-blue-500 rounded-lg appearance-none cursor-pointer barra" oninput="this.style.background = `linear-gradient(to right, #3b82f6 ${this.value}%, #e5e7eb ${this.value}%)`">
                 </div>
+                <!-- pause, play , forward y backward de caniones -->
                 <div class="w-56 text-center">
                     <i class="fa-solid fa-backward-step"></i>
                     <i class="fa-solid fa-play p-4 bg-black rounded-full text-white mx-4"></i>
                     <i class="fa-solid fa-forward-step"></i>
                 </div>
+                <!-- icono de me gusta -->
                 <i class="fa-solid fa-heart w-56 text-center"></i>
                 
             </div>
+            <!-- footer -->
             <footer class="border-t border-gray-400 flex flex-col xl:flex-row items-center justify-around w-full p-2">
                 <p class="text-gray-500">Copyright © 2024 NightDev, LLC. All Rights Reserved.</p>
                 <p class="text-gray-500">Terms of Service • Privacy Policy • API Documentation</p>
